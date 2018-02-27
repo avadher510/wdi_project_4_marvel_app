@@ -15,7 +15,7 @@ const superheroData = [{
   groups: 'Gods of Asgard, Avengers; formerly Queen’s Vengeance, Godpack, Thor Corps'
 }];
 
-mongoose.connect(dbURI, { useMongoClient: true })
+mongoose.connect(dbURI)
   .then(db => db.dropDatabase())
   .then(() => Superhero.create(superheroData))
   .then(superheros => console.log(`${superheros.length} superheros created!`))
